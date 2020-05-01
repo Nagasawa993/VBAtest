@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VBA　試験対策問題</title>
+  <LINK REL=STYLESHEET href="JSstyle.css" TYPE="text/css">
+</head>
+  <h1>VBAエキスパート　スタンダード試験対策問題</h1>
+
+  <body>
+<!-- ーーーー問題１ーーーー -->
+  <SCRIPT language="JavaScript">
+    function check1(){
+    if (document.que1.answer1.value=="Function"){
+         alert("正解です");
+    }
+    else {
+         alert("残念、間違いです")
+    }
+    }
+      function check1b() {
+          alert("Function");
+      }
+    </SCRIPT>
+  <FORM name="que1">
+    <span class="source">
+    　<h3>Q1)　[空欄]に入るコードは何か？</h3>
+      Sub Sample1_1()<br>
+      　Range("A1") = 100<br>
+      　Range("B1") =Sample1_2<br>
+      End Sub<br>
+      <br>
+      [空欄] Sample1_2()<br>
+      　Sample2 = Range("A1")*2<br>
+      End Function<br>
+    <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+    </span><br><br>
+    　答え：　<INPUT type="text" name="answer1">
+    <INPUT type="button" value="回答する" onClick="check1()">
+  </FORM>
+    <FORM method="POST"><P>
+    <INPUT type="button" name="B1"
+    value="答えを表示する"
+    onclick="check1b()"></P>
+    </FORM><br><br>
+
+<!-- ーーーー問題２ーーーー -->
+    <SCRIPT language="JavaScript">
+      function check2(){
+      if (document.que2.answer2.value=="210"){
+           alert("正解です");
+      }
+      else {
+           alert("残念、間違いです")
+      }
+      }
+        function check2b() {
+            alert("210");
+        }
+      </SCRIPT>
+    <FORM name="que2">
+    <span class="source">
+    　<h3>Q2)　次のコードを実行した場合、メッセージボックスにはなんと表示されるか</h3><br>
+      Sub Sample1_3()<br>
+      　Range("A1")=100<br>
+      　Range("B1")=Range("A1") * 2<br>
+      　Call Sample1_4<br>
+      End Sub<br>
+      <br>
+      Sub Sample1_4()<br>
+      　Range("B1") = Range("B1") + 10<br>
+      　Msgbox Range("B1")<br>
+      End Sub<br>
+    <font color="#FF0000"><br>
+    　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+    </span><br><br>
+    　答え：　<INPUT type="text" name="answer2">
+    <INPUT type="button" value="回答する" onClick="check2()">
+    </FORM>
+    <FORM method="POST"><P>
+      <INPUT type="button" name="B1"
+      value="答えを表示する"
+      onclick="check2b()"></P>
+      </FORM><br><br>
+
+<!-- ーーーー問題３ーーーー -->
+<SCRIPT language="JavaScript">
+  function check3(){
+  if (document.que3.answer3.value=="ChkSheet"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check3b() {
+        alert("ChkSheet");
+    }
+  </SCRIPT>
+    <FORM name="que3">
+      <span class="source">
+      　<h3>Q3)　次のコードは、InputBoxで入力された名前のシートが、すでに存在するかどうかを調べ、もし存在しなかったら新しく作成するマクロである。
+        [空欄]に入る適切な語句を記入しなさい。</h3><br>
+        Sub Macro1()<br>
+        　Dim NewSheet As String<br>
+        　NewSheet = InputBox("シートの名前は？")<br>
+        　If NewSheet <> "" Then<br>
+        　　If ChkSheet(NewSheet) = False Then<br>
+        　　　Sheets.Add After:=Sheets(Sheets.Count)<br>
+        　　　ActiveSheet.Name = NewSheet<br>
+        　　End If<br>
+        　End If<br>
+        End Sub<br>
+    <br>
+    Function ChkSheet(SheetName As String)<br>
+      　Dim i As Long, flag As Boolean<br>
+      　flag = False<br>
+      　　For i = 1 To Sheets.Count<br>
+      　　　If Sheets(i).Name = SheetName Then<br>
+      　　　　flag = True<br>
+      　　　　　Exit For<br>
+      　　　End If<br>
+      　　Next i<br>
+      　　[空欄] = flag<br>
+      End Function<br>
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer3">
+      <INPUT type="button" value="回答する" onClick="check3()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check3b()"></P>
+        </FORM><br><br>
+
+<!-- ーーーー問題4ーーーー -->
+<SCRIPT language="JavaScript">
+    function check4(){
+    if (document.que4.answer4.value=="1"){
+         alert("正解です");
+    }
+    else {
+         alert("残念、間違いです")
+    }
+    }
+      function check4b() {
+          alert("1");
+      }
+    </SCRIPT>
+      <FORM name="que4">
+        <span class="source">
+        　<h3>Q4)　次のコードは、A列に"東京"と入力されているセルの個数をカウントするマクロである。[空欄]に入る適切な語句を入力しなさい。</h3><br>
+        Sub Macro1()<br>
+        　Dim i As Long, A As Long<br>
+        　For i = 2 To 10<br>
+        　　If Cells(i, 1) = "東京" Then<br>
+        　　　A = A + [空欄]<br>
+        　　End If<br>
+        　Next i<br>
+        　MsgBox A<br>
+        End Sub<br>
+        <img src="./assets/imgs/img1.png"alt="問題のシート画像" width="300">
+        <font color="#FF0000"><br>
+        　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+        </span><br><br>
+        　答え：　<INPUT type="text" name="answer4">
+        <INPUT type="button" value="回答する" onClick="check4()">
+        </FORM>
+        <FORM method="POST"><P>
+          <INPUT type="button" name="B1"
+          value="答えを表示する"
+          onclick="check4b()"></P>
+          </FORM><br><br>
+
+<!-- ーーーー問題5ーーーー -->
+<SCRIPT LANGUAGE="JavaScript">
+  <!--
+  function Check5() {
+  answer=document.myform.mondai1[3].checked;
+  if(answer==true){alert("正解")}
+  else{alert("不正解")}
+  }
+  //-->
+  function check5b() {
+      alert("A = 0");
+  }
+  </SCRIPT>
+  <FORM name="myform">
+    <h3>Q5)　次のコードは、B列からD列で、2行目から7行目までの数値を合計して、8行目に代入するマクロである。
+      [空欄]に入る語句はどれか。次の中から正しいものを１つ選択しなさい。</h3>
+      <br>
+      Sub Macro1()<br>
+      　Dim i As Long, j As Long, A As Long<br>
+      　For j = 2 To 4<br>
+      　　[空欄]<br>
+      　　　For i = 2 To 7<br>
+      　　　　A = A + Cells(i, j)<br>
+      　　　　　Next i<br>
+      　　　　　　Cells(8, j) = A<br>
+      　　　　　Next j<br>
+      End Sub<br>
+      <img src="./assets/imgs/img2.png"alt="問題のシート画像" width="500">
+      <font color="#FF0000"><br>
+        　（答えを選択したあと、「回答する」ボタンをクリックしてください）</font><br>
+  <input type=radio name=mondai1>A = A + Cells(i, j)<br>
+  <input type=radio name=mondai1>A = A +1<br>
+  <input type=radio name=mondai1>A = 1<br>
+  <input type=radio name=mondai1>A = 0<br>
+  <input type=button name=ok value="回答する" onclick="Check5()">
+  <INPUT type="button" name="B1"value="答えを表示する"onclick="check5b()"></P>
+  </FORM><br><br>
+
+  <!-- ーーーー問題6ーーーー -->
+  <SCRIPT LANGUAGE="JavaScript">
+    <!--
+    function Check6() {
+    answer=document.que6.mondai6[1].checked;
+    if(answer==true){alert("正解")}
+    else{alert("不正解")}
+    }
+    //-->
+    function check6b() {
+        alert("[ 1 ]Variant [ 2 ]Split");
+    }
+    </SCRIPT>
+    <FORM name="que6">
+      <h3>Q6)　次のコードは、A列に入力されているコードのうち、ハイフンで囲まれた名前を抜き出して、B列に代入するマクロである。
+      [空欄]に入る語句の組合せとして正しいものを、次の中から１つ選択しなさい。</h3>
+        <br>
+        Sub Macro1()<br>
+        　Dim i As Long, A As [ 1 ]<br>
+        　　For i = 2 To 7<br>
+        　　　A = [ 2 ](Cells(i, 1), "-")<br>
+        　　　Cells(i, 2) = A(1)<br>
+        　　Next i<br>
+        End Sub<br>
+        <img src="./assets/imgs/img3.png"alt="問題のシート画像" width="300">
+        <font color="#FF0000"><br>
+          　（答えを選択したあと、「回答する」ボタンをクリックしてください）</font><br>
+    <input type=radio name=mondai6>[ 1 ]Variant [ 2 ]Mid<br>
+    <input type=radio name=mondai6>[ 1 ]Variant [ 2 ]Split<br>
+    <input type=radio name=mondai6>[ 1 ]String [ 2 ]Mid<br>
+    <input type=radio name=mondai6>[ 1 ]String [ 2 ]Split<br>
+    <input type=button name=ok value="回答する" onclick="Check6()">
+    <INPUT type="button" name="B1"value="答えを表示する"onclick="check6b()"></P>
+    </FORM><br><br>
+
+  <!-- ーーーー問題7ーーーー -->
+  <SCRIPT LANGUAGE="JavaScript">
+    <!--
+    function Check7() {
+    answer=document.que7.mondai7[3].checked;
+    if(answer==true){alert("正解")}
+    else{alert("不正解")}
+    }
+    //-->
+    function check7b() {
+        alert("Set x = Workbooks(1).Worksheets（1）");
+    }
+    </SCRIPT>
+    <FORM name="que7">
+      <h3>Q7)　次のマクロは、最初に開いたブックの1枚目のシートのセルA1に、"日付"と入力するマクロである。
+        空欄【 1 】に入るステートメントとして、正しいものはどれか。次の中から１つ選択しなさい。</h3><br>
+        Sub Sample()<br>
+        　Dim x As Worksheet<br>
+        　[ 1 ]<br>
+        　x.Range("A1").Value = "日付"<br>
+        End Sub<br>
+        <img src="./assets/imgs/img4.png"alt="問題のシート画像" width="400">
+        <font color="#FF0000"><br>
+          　（答えを選択したあと、「回答する」ボタンをクリックしてください）</font><br>
+    <input type=radio name=mondai7>x = Workbooks(1).Worksheet<br>
+    <input type=radio name=mondai7>x = Workbooks(1).Worksheets(1)<br>
+    <input type=radio name=mondai7>Set x = Workbooks(1).Worksheet<br>
+    <input type=radio name=mondai7>Set x = Workbooks(1).Worksheets（1）<br>
+    <input type=button name=ok value="回答する" onclick="Check7()">
+    <INPUT type="button" name="B1"value="答えを表示する"onclick="check7b()"></P>
+    </FORM><br><br>
+
+<!-- ーーーー問題8ーーーー -->
+<SCRIPT language="JavaScript">
+  function check8(){
+  if (document.que8.answer8.value=="Case Else"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check8b() {
+        alert("Case Else");
+    }
+  </SCRIPT>
+    <FORM name="que8">
+      <span class="source">
+      　<h3>Q8)　次のコードは、B列の数値が80より大きいときはC列に"○"を代入し、40より小さいときはC列に"×"を代入し、どちらでもないときはC列に"△"を代入するマクロである。[空欄]に入る適切な語句を入力しなさい。</h3><br>
+      Sub Macro1()<br>
+      　Dim i As Long<br>
+      　For i = 2 To 11<br>
+      　　Select Case Cells(i, 2)<br>
+      　　Case Is > 80<br>
+      　　　Cells(i, 3) = "○"<br>
+      　　Case Is < 40<br>
+      　　　Cells(i, 3) = "×"<br>
+      　　[空欄]<br>
+      　　　Cells(i, 3) = "△"<br>
+      　End Select<br>
+      　Next i<br>
+      End Sub<br>
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer8">
+      <INPUT type="button" value="回答する" onClick="check8()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check8b()"></P>
+        </FORM><br><br>
+
+<!-- ーーーー問題9ーーーー -->
+<SCRIPT language="JavaScript">
+  function check9(){
+  if (document.que9.answer9.value=="Sub"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check9b() {
+        alert("Sub");
+    }
+  </SCRIPT>
+    <FORM name="que9">
+      <span class="source">
+      　<h3>Q9)　次のコードは、アクティブブック内に"合計"という名前のシートが存在するかどうかを判定して、存在するときは"存在します"、存在しないときは"存在しません"とメッセージボックスに表示するマクロである。空欄に入る適切な語句を入力しなさい。</h3><br>
+      Sub Macro1()<br>
+      　Dim ws As Worksheet<br>
+      　For Each ws In Sheets<br>
+      　　If ws.Name = "合計" Then<br>
+      　　　MsgBox "存在します"<br>
+      　　　Exit [空欄]<br>
+      　　End If<br>
+      　Next ws<br>
+      　MsgBox "存在しません"<br>
+      End Sub<br>
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer9">
+      <INPUT type="button" value="回答する" onClick="check9()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check9b()"></P>
+        </FORM><br><br>
+
+<!-- ーーーー問題10ーーーー -->
+<SCRIPT language="JavaScript">
+  function check10(){
+  if (document.que10.answer10.value=="Variant"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check10b() {
+        alert("Variant");
+    }
+  </SCRIPT>
+    <FORM name="que10">
+      <span class="source">
+      　<h3>Q10)　次のコードは、A列に入力されているコードをハイフンで区切り、そこに含まれる数値をB列に代入するマクロである。
+        [空欄]に入る適切な語句を入力しなさい。</h3><br>
+        Sub Macro1()<br>
+        　Dim i As Long, A As Variant, B As [空欄]<br>
+        　For i = 2 To 10<br>
+        　　A = Split(Cells(i, 1), "-")<br>
+        　　For Each B In A<br>
+        　　　If IsNumeric(B) = True Then<br>
+        　　　　Cells(i, 2) = B<br>
+        　　　End If<br>
+        　　Next B<br>
+        　Next i<br>
+        End Sub<br>
+        <img src="./assets/imgs/img5.png"alt="問題のシート画像" width="300">
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer10">
+      <INPUT type="button" value="回答する" onClick="check10()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check10b()"></P>
+        </FORM><br><br>
+
+<!-- ーーーー問題11ーーーー -->
+<SCRIPT language="JavaScript">
+  function check11(){
+  if (document.que11.answer11.value=="50"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check11b() {
+        alert("50");
+    }
+  </SCRIPT>
+    <FORM name="que11">
+      <span class="source">
+      　<h3>Q11)　次のコードは、A列とB列の値によってC列に数値を代入するマクロである。このマクロを実行した結果のC列に代入される数値の合計はいくつか。
+        [空欄]に入る適切な語句を入力しなさい。</h3><br>
+        C列の合計は[空欄]である。<br>
+        Sub Macro1()<br>
+        　Dim i As Long<br>
+        　For i = 2 To 11<br>
+        　　Select Case Cells(i, 1)<br>
+        　　Case "東京"<br>
+        　　　Select Case Cells(i, 2)<br>
+        　　　Case "みかん"<br>
+        　　　　Cells(i, 3) = 10<br>
+        　　　Case "リンゴ"<br>
+        　　　　Cells(i, 3) = 20<br>
+        　　　End Select<br>
+        　　Case "神奈川"<br>
+        　　　Select Case Cells(i, 2)<br>
+        　　　　Case "みかん"<br>
+        　　　　　Cells(i, 3) = 30<br>
+        　　　　Case "リンゴ"<br>
+        　　　　　Cells(i, 3) = 40<br>
+        　　　End Select<br>
+        　　End Select<br>
+        　Next i<br>
+        End Sub<br>
+        <img src="./assets/imgs/img6.png"alt="問題のシート画像" width="400">
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer11">
+      <INPUT type="button" value="回答する" onClick="check11()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check11b()"></P>
+        </FORM><br><br>
+
+<!-- ーーーー問題12ーーーー -->
+<SCRIPT language="JavaScript">
+  function check12(){
+  if (document.que12.answer12.value=="Open"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check12b() {
+        alert("Open");
+    }
+  </SCRIPT>
+    <FORM name="que12">
+      <span class="source">
+      　<h3>Q12)　次のコードは、"C:\Work\Data.xlsx"を開くマクロである。空欄に入る適切な語句を入力しなさい。</h3><br>
+      Sub Macro1()<br>
+      　Workbooks.[空欄] "C:\Work\Data.xlsx"<br>
+      End Sub<br>
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer12">
+      <INPUT type="button" value="回答する" onClick="check12()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check12b()"></P>
+        </FORM><br><br>
+
+<!-- ーーーー問題13ーーーー -->
+<SCRIPT language="JavaScript">
+  function check13(){
+  if (document.que13.answer13.value=="Year"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check13b() {
+        alert("Year");
+    }
+  </SCRIPT>
+    <FORM name="que13">
+      <span class="source">
+      　<h3>Q13)　次のコードは、アクティブブックに「報告書2019.xlsx」のような名前をつけて保存するマクロである。
+        ファイル名の"2019"は、現在の西暦年とする。[空欄]に入る適切な語句を入力しなさい。</h3><br>
+        Sub Macro1()<br>
+        　ActiveWorkbook.SaveAs "報告書" & [空欄](Now) & ".xlsx"<br>
+        End Sub<br>
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer13">
+      <INPUT type="button" value="回答する" onClick="check13()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check13b()"></P>
+        </FORM><br><br>
+
+<!-- ーーーー問題14ーーーー -->
+<SCRIPT language="JavaScript">
+  function check14(){
+  if (document.que14.answer14.value=="FileCopy"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check14b() {
+        alert("FileCopy");
+    }
+  </SCRIPT>
+    <FORM name="que14">
+      <span class="source">
+      　<h3>Q14)　次のコードは、C:\Dataフォルダにある"予算.xlsx"を"実績.xlsx"としてコピーするマクロである。
+        [空欄]に入る適切な語句を入力しなさい。</h3><br>
+        Sub Macro1()</P>
+        　[空欄] "C:\Data\予算.xlsx", "C:\Data\実績.xlsx"</P>
+        End Sub</P>
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer14">
+      <INPUT type="button" value="回答する" onClick="check14()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check14b()"></P>
+        </FORM><br><br>
+
+<!-- ーーーー問題15ーーーー -->
+<SCRIPT language="JavaScript">
+  function check15(){
+  if (document.que15.answer15.value=="MkDir"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check15b() {
+        alert("MkDir");
+    }
+  </SCRIPT>
+    <FORM name="que15">
+      <span class="source">
+      　<h3>Q15)　次のコードは、C:\Dataフォルダに"2019"という名前のフォルダを作成するマクロである。
+        [空欄]に入る適切な語句を入力しなさい。
+        </h3><br>
+        Sub Macro1()<br>
+        　[空欄] "C:\Data\2019"<br>
+        End Sub<br>
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer15">
+      <INPUT type="button" value="回答する" onClick="check15()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check15b()"></P>
+        </FORM><br><br>
+
+<!-- ーーーー問題16ーーーー -->
+<SCRIPT language="JavaScript">
+  function check16(){
+  if (document.que16.answer16.value=="SumIf"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check16b() {
+        alert("SumIf");
+    }
+  </SCRIPT>
+    <FORM name="que16">
+      <span class="source">
+      　<h3>Q16)　次のコードは、A列が"名古屋"である行のB列に入力されている数値を合計して、メッセージボックスに表示するマクロである。
+        [空欄]に入る適切な語句を入力しなさい。
+        </h3><br>
+        Sub Macro1()<br>
+        　MsgBox WorksheetFunction.[空欄](Range("A2:A10"), "名古屋", Range("B2:B10"))<br>
+        End Sub<br>
+        <img src="./assets/imgs/img7.png"alt="問題のシート画像" width="300">
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer16">
+      <INPUT type="button" value="回答する" onClick="check16()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check16b()"></P>
+        </FORM><br><br>
+
+<!-- ーーーー問題17ーーーー -->
+<SCRIPT language="JavaScript">
+  function check17(){
+  if (document.que17.answer17.value=="Small"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check17b() {
+        alert("Small");
+    }
+  </SCRIPT>
+    <FORM name="que17">
+      <span class="source">
+      　<h3>Q17)　次のコードは、A列に入力されている数値のうち「3番目に小さい数値」をメッセージボックスに表示するマクロである。
+        [空欄]に入る適切な語句を入力しなさい。</h3><br>
+        Sub Macro1()<br>
+        　MsgBox WorksheetFunction.[空欄](Range("A2:A10"), 3)<br>
+        End Sub<br>
+        <img src="./assets/imgs/img8.png"alt="問題のシート画像" width="200">
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer17">
+      <INPUT type="button" value="回答する" onClick="check17()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check17b()"></P>
+        </FORM><br><br>
+
+<!-- ーーーー問題18ーーーー -->
+<SCRIPT language="JavaScript">
+  function check18(){
+  if (document.que18.answer18.value=="CountIf"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check18b() {
+        alert("CountIf");
+    }
+  </SCRIPT>
+    <FORM name="que18">
+      <span class="source">
+      　<h3>Q18)　次のコードは、セル範囲A2:A11の中に"西岡"という文字列が存在するかどうかを調べるマクロである。
+        空欄に入る適切な語句を入力しなさい。</h3><br>
+        Sub Macro1()<br>
+        　If WorksheetFunction.空欄(Range("A2:A11"), "西岡") = 0 Then<br>
+        　　MsgBox "西岡は存在しません"<br>
+        　Else<br>
+        　　MsgBox "西岡は存在します"<br>
+        　End If<br>
+        End Sub<br>
+        <img src="./assets/imgs/img9.png"alt="問題のシート画像" width="300">
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer18">
+      <INPUT type="button" value="回答する" onClick="check18()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check18b()"></P>
+        </FORM><br><br>
+
+<!-- ーーーー問題19ーーーー -->
+<SCRIPT language="JavaScript">
+  function check19(){
+  if (document.que19.answer19.value=="EoMonth"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check19b() {
+        alert("EoMonth");
+    }
+  </SCRIPT>
+    <FORM name="que19">
+      <span class="source">
+      　<h3>Q19)　次のコードは、A列に入力されている日付から、その月の月末日を求めてB列に代入するマクロである。
+        [空欄]に入る適切な語句を入力しなさい。
+      </h3><br>
+      Sub Macro1()<br>
+      　Dim i As Long<br>
+      　For i = 2 To 10<br>
+      　　Cells(i, 2) = WorksheetFunction.[空欄](Cells(i, 1), 0)<br>
+      　Next i<br>
+      End Sub<br>
+        <img src="./assets/imgs/img10.png"alt="問題のシート画像" width="300">
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer19">
+      <INPUT type="button" value="回答する" onClick="check19()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check19b()"></P>
+        </FORM><br><br>
+
+<!-- ーーーー問題20ーーーー -->
+<SCRIPT language="JavaScript">
+  function check20(){
+  if (document.que20.answer20.value=="EoMonth"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check20b() {
+        alert("EoMonth");
+    }
+  </SCRIPT>
+    <FORM name="que20">
+      <span class="source">
+      　<h3>Q20)　次のコードは、セル範囲A1:A8で"A-12"を「完全一致」で検索し、見つかったセルの右隣のセルの値をメッセージボックスに表示するマクロである。
+        [空欄]に入る適切な語句を入力しなさい。
+      </h3><br>
+      Sub Macro1()<br>
+      　Dim A As Range<br>
+      　Set A = Range("A1:A8").Find(What:="A-12", Lookat:=[空欄])<br>
+      　MsgBox A.Offset(0, 1)<br>
+      End Sub<br>
+        <img src="./assets/imgs/img11.png"alt="問題のシート画像" width="200">
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer20">
+      <INPUT type="button" value="回答する" onClick="check20()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check20b()"></P>
+        </FORM><br><br>
+
+<!-- ーーーー問題22ーーーー -->
+<SCRIPT language="JavaScript">
+  function check22(){
+  if (document.que22.answer22.value=="Nothing"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check22b() {
+        alert("Nothing");
+    }
+  </SCRIPT>
+    <FORM name="que22">
+      <span class="source">
+      　<h3>Q22)　次のコードは、セル範囲A1:A11で"佐々木"を検索し、見つかったときは見つかったセルのアドレスをメッセージボックスに表示し、
+        見つからなかったときは"見つかりません"と表示するマクロである。
+        [空欄]に入る適切な語句を入力しなさい。
+      </h3><br>
+      Sub Macro3()<br>
+      　Dim A As Range<br>
+      　Set A = Range("A1:A11").Find(What:="佐々木")<br>
+      　If A Is [空欄] Then<br>
+      　　MsgBox "見つかりません"<br>
+      　Else<br>
+      　　MsgBox A.Address<br>
+      　End If<br>
+      End Sub<br>
+        <img src="./assets/imgs/img13.png"alt="問題のシート画像" width="300">
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer22">
+      <INPUT type="button" value="回答する" onClick="check22()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check22b()"></P>
+        </FORM><br><br>
+
+<!-- ーーーー問題23ーーーー -->
+<SCRIPT language="JavaScript">
+  function check23(){
+  if (document.que23.answer23.value=="xlOr"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check23b() {
+        alert("xlOr");
+    }
+  </SCRIPT>
+    <FORM name="que23">
+      <span class="source">
+      　<h3>Q23)　次のコードは、セルA1を含む表に対して「1列目が"東京"または"大阪"である」という条件で絞り込むマクロである。
+        [空欄]に入る定数を記述しなさい。
+      </h3><br>
+      Sub Macro1()<br>
+      　Range("A1").AutoFilter 1, "東京", [空欄], "大阪"<br>
+      End Sub<br>
+        <img src="./assets/imgs/img14.png"alt="問題のシート画像" width="300">
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer23">
+      <INPUT type="button" value="回答する" onClick="check23()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check23b()"></P>
+        </FORM><br><br>
+
+<!-- ーーーー問題24ーーーー -->
+<SCRIPT language="JavaScript">
+  function check24(){
+  if (document.que24.answer24.value=="CurrentRegion"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check24b() {
+        alert("CurrentRegion");
+    }
+  </SCRIPT>
+    <FORM name="que24">
+      <span class="source">
+      　<h3>Q24)　次のコードは、セルA1を含む表に対して「1列目が"東京"と等しい」で絞り込み、その結果全体をSheet2のセルA1にコピーするマクロである。
+        [空欄]に入る適切な語句を入力しなさい。
+      </h3><br>
+      Sub Macro1()<br>
+      　Range("A1").AutoFilter 1, "東京"<br>
+      　Range("A1").[空欄].Copy Sheets("Sheet2").Range("A1")<br>
+      End Sub<br>
+        <img src="./assets/imgs/img15.png"alt="問題のシート画像" width="300">
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer24">
+      <INPUT type="button" value="回答する" onClick="check24()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check24b()"></P>
+        </FORM><br><br>
+
+<!-- ーーーー問題25ーーーー -->
+<SCRIPT language="JavaScript">
+  function check25(){
+  if (document.que25.answer25.value=="Subtotal"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check25b() {
+        alert("Subtotal");
+    }
+  </SCRIPT>
+    <FORM name="que25">
+      <span class="source">
+      　<h3>Q25)　次のコードは、セルA1を含む表に対して「1列目が"ダージリン"と等しい」で絞り込み、その結果が何件あるかを画面に表示するマクロである。
+        [空欄]に入る適切な語句を入力しなさい。
+      </h3><br>
+      Sub Macro1()<br>
+      　Range("A1").AutoFilter 1, "ダージリン"<br>
+      　MsgBox WorksheetFunction.[空欄](3, Range("A:A")) - 1<br>
+      End Sub<br>
+        <img src="./assets/imgs/img16.png"alt="問題のシート画像" width="300">
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer25">
+      <INPUT type="button" value="回答する" onClick="check25()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check25b()"></P>
+        </FORM><br><br>
+
+  <!-- ーーーー問題26ーーーー -->
+  <SCRIPT LANGUAGE="JavaScript">
+    <!--
+    function Check26() {
+    answer=document.que26.mondai26[0].checked;
+    if(answer==true){alert("正解")}
+    else{alert("不正解")}
+    }
+    //-->
+    function check26b() {
+        alert("xlAscending");
+    }
+    </SCRIPT>
+    <FORM name="que26">
+      <h3>Q26)　次のコードは、セルA1を含む表全体を、A列を基準として「昇順」に並べ替えるマクロである。
+        [空欄]に入る定数として正しいものを、次の中から1つ選択しなさい。
+      </h3><br>
+      Sub Macro1()<br>
+      　Range("A1").Sort Key1:=Range("A2"), Order1:=[空欄], Header:=xlYes<br>
+      End Sub<br>
+        <img src="./assets/imgs/img17.png"alt="問題のシート画像" width="300">
+        <font color="#FF0000"><br>
+          　（答えを選択したあと、「回答する」ボタンをクリックしてください）</font><br>
+    <input type=radio name=mondai26>xlAscending<br>
+    <input type=radio name=mondai26>xlDescending<br>
+    <input type=radio name=mondai26>XlSortOrder<br>
+    <input type=radio name=mondai26>xlDateOrder<br>
+    <input type=button name=ok value="回答する" onclick="Check26()">
+    <INPUT type="button" name="B1"value="答えを表示する"onclick="check26b()"></P>
+    </FORM><br><br>
+
+<!-- ーーーー問題27ーーーー -->
+<SCRIPT language="JavaScript">
+  function check27(){
+  if (document.que27.answer27.value==".Apply"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check27b() {
+        alert(".Apply");
+    }
+  </SCRIPT>
+    <FORM name="que27">
+      <span class="source">
+      　<h3>Q27)　次のコードは、セル範囲A1:A13を、C列を基準として降順に並べ替えるマクロである。[空欄]に入る適切な語句を入力しなさい。
+      </h3><br>
+      Sub Macro1()<br>
+      　With ActiveSheet.Sort<br>
+      　　.SortFields.Clear<br>
+      　　.SortFields.Add Key:=Range("C2"), Order:=xlDescending<br>
+      　　.SetRange Range("A1:C13")<br>
+      　　.Header = xlYes<br>
+      　　[空欄]<br>
+      　End With<br>
+      End Sub<br>
+        <img src="./assets/imgs/img18.png"alt="問題のシート画像" width="300">
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer27">
+      <INPUT type="button" value="回答する" onClick="check27()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check27b()"></P>
+        </FORM><br><br>
+
+<!-- ーーーー問題28ーーーー -->
+<SCRIPT language="JavaScript">
+  function check28(){
+  if (document.que28.answer28.value=="xlNo"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check28b() {
+        alert("xlNo");
+    }
+  </SCRIPT>
+    <FORM name="que28">
+      <span class="source">
+      　<h3>Q28)　次のコードは、セル範囲A3:C10だけを、C列を基準として降順に並べ替えるマクロである。[空欄]に入る定数を記述しなさい。
+      </h3><br>
+      Sub Macro1()<br>
+      　Range("A3:C10").Sort Key1:=Range("C3"), Order1:=xlDescending, Header:=[空欄]<br>
+      End Sub<br>
+        <img src="./assets/imgs/img19.png"alt="問題のシート画像" width="300">
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer28">
+      <INPUT type="button" value="回答する" onClick="check28()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check28b()"></P>
+        </FORM><br><br>
+
+<!-- ーーーー問題29ーーーー -->
+<SCRIPT language="JavaScript">
+  function check29(){
+  if (document.que29.answer29.value=="Phonetic"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check29b() {
+        alert("Phonetic");
+    }
+  </SCRIPT>
+    <FORM name="que29">
+      <span class="source">
+      　<h3>Q29)　次のコードは、セル範囲A2:A11の各セルに対して、フリガナが設定されていればそのフリガナを、
+        フリガナが設定されていなければ"×"を、B列のセルに代入するマクロである。
+        [空欄]に入る適切な語句を入力しなさい。ただし、2つの空欄には同じ語句が入ります。
+      </h3><br>
+      Sub Macro1()<br>
+      　Dim i As Long<br>
+      　For i = 2 To 11<br>
+      　　If Cells(i, 1).[空欄].Text = Cells(i, 1) Then<br>
+      　　　Cells(i, 2) = "×"<br>
+      　　Else<br>
+      　　　Cells(i, 2) = Cells(i, 1).[空欄].Text<br>
+      　　End If<br>
+      　Next i<br>
+      End Sub<br>
+        <img src="./assets/imgs/img20.png"alt="問題のシート画像" width="200">
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer29">
+      <INPUT type="button" value="回答する" onClick="check29()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check29b()"></P>
+        </FORM><br><br>
+
+<!-- ーーーー問題30ーーーー -->
+<SCRIPT language="JavaScript">
+  function check30(){
+  if (document.que30.answer30.value=="Range"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check30b() {
+        alert("Range");
+    }
+  </SCRIPT>
+    <FORM name="que30">
+      <span class="source">
+      　<h3>Q30)　次のコードは、1列目が"リンゴ"であるデータを、タイトル行ごとSheet2のセルA1へコピーするマクロである。
+        [空欄]に入る適切な語句を入力しなさい。
+      </h3><br>
+      Sub Macro1()<br>
+      　With Range("A1").ListObject.[空欄]<br>
+      　　.AutoFilter 1, "リンゴ"<br>
+      　　.Copy Sheets("Sheet2").Range("A1")<br>
+      　　.AutoFilter 1<br>
+      　End With<br>
+      End Sub<br>
+        <img src="./assets/imgs/img21.png"alt="問題のシート画像" width="350">
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer30">
+      <INPUT type="button" value="回答する" onClick="check30()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check30b()"></P>
+        </FORM><br><br>
+
+<!-- ーーーー問題31ーーーー -->
+<SCRIPT language="JavaScript">
+  function check31(){
+  if (document.que31.answer31.value=="DataBodyRange"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check31b() {
+        alert("DataBodyRange");
+    }
+  </SCRIPT>
+    <FORM name="que31">
+      <span class="source">
+      　<h3>Q31)　次のコードは、1列目が"リンゴ"であるデータのうち、タイトル行を除いたデータだけSheet2のセルA1へコピーするマクロである。
+        [空欄]に入る適切な語句を入力しなさい。
+      </h3><br>
+      Sub Macro1()<br>
+      　With Range("A1").ListObject.[空欄]<br>
+      　　.AutoFilter 1, "リンゴ"<br>
+      　　.Copy Sheets("Sheet2").Range("A1")<br>
+      　　.AutoFilter 1<br>
+      　End With<br>
+      End Sub<br>
+        <img src="./assets/imgs/img21.png"alt="問題のシート画像" width="350">
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer31">
+      <INPUT type="button" value="回答する" onClick="check31()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check31b()"></P>
+        </FORM><br><br>
+
+<!-- ーーーー問題32ーーーー -->
+<SCRIPT language="JavaScript">
+  function check32(){
+  if (document.que32.answer32.value=="DataBodyRange"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check32b() {
+        alert("DataBodyRange");
+    }
+  </SCRIPT>
+    <FORM name="que32">
+      <span class="source">
+      　<h3>Q32)　次のコードは、テーブルに新しい列を追加するマクロである。[空欄]に入る適切な語句を入力しなさい。
+      </h3><br>
+      Sub Macro3()<br>
+      　Range("A1").ListObject.[空欄].Add<br>
+      End Sub<br>
+        <img src="./assets/imgs/img22.png"alt="問題のシート画像" width="350">
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer32">
+      <INPUT type="button" value="回答する" onClick="check32()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check32b()"></P>
+        </FORM><br><br>
+
+<!-- ーーーー問題33ーーーー -->
+<SCRIPT language="JavaScript">
+  function check33(){
+  if (document.que33.answer33.value=="[#All]"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check33b() {
+        alert("[#All]");
+    }
+  </SCRIPT>
+    <FORM name="que33">
+      <span class="source">
+      　<h3>Q33)　次のコードは、1列目が"みかん"であるデータをタイトル行ごとSheet2のセルA1へコピーするマクロである。
+        [空欄]に入る適切な語句を入力しなさい。
+      </h3><br>
+      Sub Macro1()<br>
+      　Range("テーブル1").AutoFilter 1, "みかん"<br>
+      　Range("テーブル1[空欄]").Copy Sheets("Sheet2").Range("A1")<br>
+      　Range("テーブル1").AutoFilter 1<br>
+      End Sub<br>
+        <img src="./assets/imgs/img23.png"alt="問題のシート画像" width="350">
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer33">
+      <INPUT type="button" value="回答する" onClick="check33()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check33b()"></P>
+        </FORM><br><br>
+
+<!-- ーーーー問題34ーーーー -->
+<SCRIPT language="JavaScript">
+  function check34(){
+  if (document.que34.answer34.value=="[#Data]"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check34b() {
+        alert("[#Data]");
+    }
+  </SCRIPT>
+    <FORM name="que34">
+      <span class="source">
+      　<h3>Q34)　次のコードは、1列目が"梨"であるデータのうちタイトル行を除いたデータだけSheet2のセルA1へコピーするマクロである。
+        [空欄]に入る適切な語句を入力しなさい。
+      </h3><br>
+      Sub Macro1()<br>
+      　Range("テーブル1").AutoFilter 1, "梨"<br>
+      　Range("テーブル1[空欄]").Copy Sheets("Sheet2").Range("A1")<br>
+      　Range("テーブル1").AutoFilter 1<br>
+      End Sub<br>
+        <img src="./assets/imgs/img23.png"alt="問題のシート画像" width="350">
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer34">
+      <INPUT type="button" value="回答する" onClick="check34()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check34b()"></P>
+        </FORM><br><br>
+
+<!-- ーーーー問題35ーーーー -->
+<SCRIPT language="JavaScript">
+  function check35(){
+  if (document.que35.answer35.value=="[単価]"){
+       alert("正解です");
+  }
+  else if (document.que35.answer35.value=="[[#Data],[単価]]"){
+      alert("正解です");
+  }
+  else if (document.que35.answer35.value=="[[#All],[単価]]"){
+      alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check35b() {
+        alert("[単価]、[[#Data],[単価]]、[[#All],[単価]]");
+    }
+  </SCRIPT>
+    <FORM name="que35">
+      <span class="source">
+      　<h3>Q35)　次のコードは、テーブル内の"単価"列を削除するマクロである。[空欄]に入る適切な語句を入力しなさい。
+      </h3><br>
+      Sub Macro1()<br>
+      　Range("テーブル1[空欄]").Delete<br>
+      End Sub<br>
+        <img src="./assets/imgs/img21.png"alt="問題のシート画像" width="350">
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer35">
+      <INPUT type="button" value="回答する" onClick="check35()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check35b()"></P>
+        </FORM><br><br>
+
+<!-- ーーーー問題36ーーーー -->
+<SCRIPT language="JavaScript">
+  function check36(){
+  if (document.que36.answer36.value=="GoTo"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check36b() {
+        alert("GoTo");
+    }
+  </SCRIPT>
+    <FORM name="que36">
+      <span class="source">
+      　<h3>Q36)　次のコードは、もしエラーが発生したら、ラベルError1に処理をジャンプさせるマクロである。
+        [空欄]に入る適切な語句を入力しなさい。
+      </h3><br>
+      Sub Macro1()<br>
+      　On Error [空欄] Error1<br>
+      　Sheets("Sheet1").Name = Range("A1")<br>
+      　Exit Sub<br>
+      Error1:<br>
+      　MsgBox "エラーが発生しました"<br>
+      End Sub<br>
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer36">
+      <INPUT type="button" value="回答する" onClick="check36()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check36b()"></P>
+        </FORM><br><br>
+
+<!-- ーーーー問題37ーーーー -->
+<SCRIPT language="JavaScript">
+  function check37(){
+  if (document.que37.answer37.value=="Resume Next"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check37b() {
+        alert("Resume Next");
+    }
+  </SCRIPT>
+    <FORM name="que37">
+      <span class="source">
+      　<h3>Q37)　次のコードは、エラーが発生してもエラーを無視して処理を続け、メッセージを表示するマクロである。
+        [空欄]に入る適切な語句を入力しなさい。
+      </h3><br>
+      Sub Macro1()<br>
+      　On Error [空欄] Error1<br>
+      　Sheets("Sheet1").Name = Range("A1")<br>
+      　Exit Sub<br>
+      Error1:<br>
+      　MsgBox "エラーが発生しました"<br>
+      End Sub<br>
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer37">
+      <INPUT type="button" value="回答する" onClick="check37()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check37b()"></P>
+        </FORM><br><br>
+
+<!-- ーーーー問題38ーーーー -->
+<SCRIPT language="JavaScript">
+  function check38(){
+  if (document.que38.answer38.value=="StrConv"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check38b() {
+        alert("StrConv");
+    }
+  </SCRIPT>
+    <FORM name="que38">
+      <span class="source">
+      　<h3>Q38)　次のコードは、セル範囲A2:A11の各セルに入力されている半角のカタカナを、すべて全角のカタカナに変換するマクロである。
+        [空欄]に入る適切な語句を入力しなさい。
+      </h3><br>
+      Sub Macro1()<br>
+      　Dim i As Long<br>
+      　For i = 2 To 11<br>
+      　　Cells(i, 1) = [空欄](Cells(i, 1), vbWide)<br>
+      　Next i<br>
+      End Sub<br>
+      <img src="./assets/imgs/img24.png"alt="問題のシート画像" width="200">
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer38">
+      <INPUT type="button" value="回答する" onClick="check38()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check38b()"></P>
+        </FORM><br><br>
+
+<!-- ーーーー問題39ーーーー -->
+<SCRIPT language="JavaScript">
+  function check39(){
+  if (document.que39.answer39.value=="DateSerial"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check39b() {
+        alert("DateSerial");
+    }
+  </SCRIPT>
+    <FORM name="que39">
+      <span class="source">
+      　<h3>Q39)　次のコードは、A列からC列に入力されている数値から日付を生成してD列に代入するマクロである。
+        [空欄]に入る適切な語句を入力しなさい。
+      </h3><br>
+      Sub Macro1()<br>
+      　Dim i As Long<br>
+      　For i = 2 To 11<br>
+      　　Cells(i, 4) = [空欄](Cells(i, 1), Cells(i, 2), Cells(i, 3))<br>
+      　Next i<br>
+      End Sub<br>
+      <img src="./assets/imgs/img25.png"alt="問題のシート画像" width="400">
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer39">
+      <INPUT type="button" value="回答する" onClick="check39()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check39b()"></P>
+        </FORM><br><br>
+
+<!-- ーーーー問題40ーーーー -->
+<SCRIPT language="JavaScript">
+  function check40(){
+  if (document.que40.answer40.value=="Print"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check40b() {
+        alert("Print");
+    }
+  </SCRIPT>
+    <FORM name="que40">
+      <span class="source">
+      　<h3>Q40)　次のコードは、アクティブブック内にあるすべてのシート名をイミディエイトウィンドウに出力するマクロである。
+        [空欄]に入る適切な語句を入力しなさい。
+      </h3><br>
+      Sub Macro1()<br>
+      　Dim i As Long<br>
+      　For i = 1 To Sheets.Count<br>
+      　　Debug.[空欄] Sheets(i).Name<br>
+      　Next i<br>
+      End Sub<br>
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer40">
+      <INPUT type="button" value="回答する" onClick="check40()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check40b()"></P>
+        </FORM><br><br>
+
+<!-- ーーーー問題41ーーーー -->
+<SCRIPT language="JavaScript">
+  function check41(){
+  if (document.que41.answer41.value=="IsDate"){
+       alert("正解です");
+  }
+  else {
+       alert("残念、間違いです")
+  }
+  }
+    function check41b() {
+        alert("IsDate");
+    }
+  </SCRIPT>
+    <FORM name="que41">
+      <span class="source">
+      　<h3>Q41)　次のコードは、セルA1の値が日付だったら、その日付の西暦年を求めて、セルB1に代入するマクロである。
+        [空欄]に入る適切な語句を入力しなさい。
+      </h3><br>
+      Sub Macro1()<br>
+      　If [空欄](Range("A1").Value) = True Then<br>
+      　　Range("B1").Value = Year(Range("A1").Value)<br>
+      　End If<br>
+      End Sub<br>
+      <font color="#FF0000"><br>
+      　（答えを記入したあと、「回答する」ボタンをクリックしてください）</font>
+      </span><br><br>
+      　答え：　<INPUT type="text" name="answer41">
+      <INPUT type="button" value="回答する" onClick="check41()">
+      </FORM>
+      <FORM method="POST"><P>
+        <INPUT type="button" name="B1"
+        value="答えを表示する"
+        onclick="check41b()"></P>
+        </FORM><br><br>
+
+</body>
+</html>
